@@ -2,7 +2,7 @@
 // Lightbox
 //
 // @author DxF5H
-// @version 0.9.7
+// @version 0.9.8
 // @url https://github.com/DxF5H/lightbox
 //
 // MIT License
@@ -281,7 +281,7 @@
         var image = document.createElement("img");
         image.style.opacity = "0";
 
-        if (gallery[i].selector.getElementsByTagName("img")[0].alt) {
+        if (gallery[i].selector.getElementsByTagName("img")[0] && gallery[i].selector.getElementsByTagName("img")[0].alt) {
           image.alt = gallery[i].selector.getElementsByTagName("img")[0].alt;
         } else {
           image.alt = "";
@@ -564,7 +564,7 @@
       // Execute a few things once per element
       [].forEach.call(elements, function(element, index) {
         // Set zoom icon if necessary
-        if (options.zoom) {
+        if (options.zoom && element.getElementsByTagName("img")[0]) {
           var lightboxZoom = document.createElement("div");
 
           lightboxZoom.classList.add("lightbox-zoom");
