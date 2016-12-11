@@ -25,6 +25,7 @@
 .lightbox-overlay {
   background: rgba(17, 17, 17, .8);
   bottom: 0;
+  box-sizing: border-box;
   left: 0;
   position: fixed;
   right: 0;
@@ -32,6 +33,12 @@
   z-index: 32;
   overflow: hidden;
 }
+
+  .lightbox-overlay *,
+  .lightbox-overlay *::before,
+  .lightbox-overlay *::after {
+    box-sizing: inherit;
+  }
 
   .lightbox-overlay[aria-hidden="true"] {
     display: none;

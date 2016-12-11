@@ -314,7 +314,7 @@
           }
         }
 
-        // Add figure slider element
+        // Add figure to slider element
         sliderElement[i].appendChild(figure);
 
         // Add slider element to slider
