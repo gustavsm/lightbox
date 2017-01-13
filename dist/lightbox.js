@@ -2,7 +2,7 @@
 // Lightbox
 //
 // @author DxF5H
-// @version 0.9.8
+// @version 1.0.0
 // @url https://github.com/DxF5H/lightbox
 //
 // MIT License
@@ -185,10 +185,20 @@
     };
 
 
+    var transformSupport = function () {
+      var div = document.documentElement.style;
+
+      if (typeof div.transform == "string") {
+        return true;
+      }
+      return false;
+    };
+
+
     var updateOffset = function () {
       var offset = -currentIndex * 100 + "%";
 
-      if (typeof slider.style.perspective !== "undefined") {
+      if (transformSupport()) {
         slider.style.transform = "translate(" + offset + ", 0)";
       } else {
         slider.style.left = offset;
@@ -567,9 +577,10 @@
         if (options.zoom && element.getElementsByTagName("img")[0]) {
           var lightboxZoom = document.createElement("div");
 
-          lightboxZoom.classList.add("lightbox-zoom");
+          lightboxZoom.classList.add("lightbox-zoom-icon");
           lightboxZoom.innerHTML = options.zoomText;
 
+          element.classList.add("lightbox-zoom");
           element.appendChild(lightboxZoom);
         }
 

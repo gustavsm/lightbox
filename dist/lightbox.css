@@ -1,4 +1,8 @@
 .lightbox {
+
+}
+
+.lightbox-zoom {
   border: 0;
   box-shadow: none;
   display: inline-block;
@@ -6,15 +10,15 @@
   text-decoration: none;
 }
 
-.lightbox-zoom {
-  background: #fff;
-  bottom: 0;
-  color: #2727a4;
-  line-height: 1;
-  padding: .306em .5em;
-  position: absolute;
-  right: 0
-}
+  .lightbox-zoom-icon {
+    background: #fff;
+    bottom: 0;
+    color: #2727a4;
+    line-height: 1;
+    padding: .306em .5em;
+    position: absolute;
+    right: 0
+  }
 
 .lightbox-no-scroll {
   overflow-y: hidden;
