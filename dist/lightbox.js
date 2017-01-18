@@ -2,25 +2,27 @@
 // Lightbox
 //
 // @author DxF5H
-// @version 1.0.0
+// @version 1.0.1
 // @url https://github.com/DxF5H/lightbox
 //
 // MIT License
 // ----------------------------------------
 
 // Universal Module Definition
-(function (window, factory) {
+(function (root, factory) {
   if (typeof define === "function" && define.amd) {
-    // AMD
+    // AMD. Register as an anonymous module.
     define(factory);
   } else if (typeof module === "object" && module.exports) {
-    // CommonJS
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
     module.exports = factory();
   } else {
-    // Browser global
-    window.lightbox = factory();
+    // Browser globals (root is window)
+    root.lightbox = factory();
   }
-}(typeof window !== "undefined" ? window : this, function () {
+}(this, function () {
   var lightbox = function (selector, userOptions) {
     "use strict";
 
@@ -567,8 +569,7 @@
       var elements = document.querySelectorAll(selector);
 
       if (!elements.length) {
-        console.log("Ups, I can't find the selector \"" + selector + "\".");
-        return;
+        throw new Error("Ups, I can't find the selector \"" + selector + "\".");
       }
 
       // Execute a few things once per element
