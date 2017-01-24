@@ -2,7 +2,7 @@
 // Lightbox
 //
 // @author DxF5H
-// @version 1.0.1
+// @version 1.0.2
 // @url https://github.com/DxF5H/lightbox
 //
 // MIT License
@@ -275,6 +275,7 @@
     var createOverlay = function () {
       var i = 0,
           x = 0,
+          figureWrapper = null,
           figure = null,
           figuresIds = [],
           figcaption = null,
@@ -284,6 +285,10 @@
         sliderElement[i] = document.createElement("div");
         sliderElement[i].classList.add("lightbox-content");
         sliderElement[i].id = "lightbox-content-" + i;
+
+        // Create figure wrapper
+        figureWrapper = document.createElement("div");
+        figureWrapper.classList.add("lightbox-figure-wrapper");
 
         // Create figure
         figure = document.createElement("figure");
@@ -326,8 +331,11 @@
           }
         }
 
-        // Add figure to slider element
-        sliderElement[i].appendChild(figure);
+        // Add figure to figure wrapper
+        figureWrapper.appendChild(figure);
+
+        // Add figure wrapper to slider element
+        sliderElement[i].appendChild(figureWrapper);
 
         // Add slider element to slider
         slider.appendChild(sliderElement[i]);
