@@ -90,6 +90,7 @@
   }
 
     .lightbox-content figure {
+      margin: 0;
       position: relative;
     }
 
@@ -109,6 +110,7 @@
         left: 0;
         padding: .25em .5em;
         position: absolute;
+        white-space: initial;
         width: 100%;
       }
 
