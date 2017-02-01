@@ -2,7 +2,7 @@
 // Lightbox
 //
 // @author DxF5H
-// @version 1.0.2
+// @version 1.0.3
 // @url https://github.com/DxF5H/lightbox
 //
 // MIT License
