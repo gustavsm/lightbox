@@ -2,7 +2,7 @@
 // Lightbox
 //
 // @author DxF5H
-// @version 1.0.3
+// @version 1.0.4
 // @url https://github.com/DxF5H/lightbox
 //
 // MIT License
@@ -289,6 +289,7 @@
         // Create figure wrapper
         figureWrapper = document.createElement("div");
         figureWrapper.classList.add("lightbox-figure-wrapper");
+        figureWrapper.id = "lightbox-figure-wrapper-" + i;
 
         // Create figure
         figure = document.createElement("figure");
@@ -442,7 +443,7 @@
       } else if (this === nextButton) {
         nextImage();
         updateFocus("right");
-      } else if (this === closeButton || this === overlay && event.target.id.indexOf("lightbox-content") !== -1) {
+      } else if (this === closeButton || this === overlay && event.target.id.indexOf("lightbox-figure-wrapper") !== -1) {
         closeOverlay();
       }
 
