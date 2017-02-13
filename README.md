@@ -6,7 +6,7 @@ Simple lightbox script without dependencies (not even jQuery).
 
 ## Installation
 
-Simple include `lightbox.css` and `lightbox.js` to your page.
+Simple include `dist/lightbox.css` and `dist/lightbox.js` to your page.
 
 ## Usage
 
