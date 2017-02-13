@@ -10,6 +10,10 @@
   text-decoration: none;
 }
 
+  .lightbox-zoom img {
+    display: block;
+  }
+
   .lightbox-zoom-icon {
     background: #fff;
     bottom: 0;
